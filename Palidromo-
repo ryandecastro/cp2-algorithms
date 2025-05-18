@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LENGTH 100
+
+int main() {
+    char palavra[MAX_LENGTH];
+
+    printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    int length = strlen(palavra);
+    int is_palindromo = 1; // É para ser um palidromo
+
+    // Verifica da palavra se é palindromo
+    for (int i = 0; i < length / 2; i++) {
+        if (palavra[i] != palavra[length - 1 - i]) {
+            is_palindromo = 0; // É para não ser um palidromo
+            break;
+        }
+    }
+
+    // Exibição
+    if (is_palindromo) {
+        printf("A palavra,numero ou frase e um palindromo.\n");
+    } else {
+        printf("A palavra,numero ou frase NAO e um palindromo.\n");
+    }
+
+    return 0;
+}
